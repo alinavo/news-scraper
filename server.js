@@ -9,13 +9,13 @@ var cheerio = require("cheerio");
 var request = require("request");
 
 //ARTICLES AND NOTES.JS
-var Articles = require("./models/Articles.js");
-var Notes = require("./models/Notes.js");
+var Articles = require("./models/articles.js");
+var Notes = require("./models/notes.js");
 
 // mongoose.Promise = Promise;
 
 //PORT 3000
-var PORT = process.env.PORT || 3000;
+// var PORT = process.env.PORT || 3000;
 
 //EXPRESS
 var app = express();
@@ -41,19 +41,18 @@ mongoose.connect(MONGODB);
 var db = mongoose.connection;
 
 //MONGOOSE ERRORS
-db.on("error", function(error) {
+db.on("error", function (error) {
     console.log("Mongoose Error: ", error);
 });
 
 //MONGOOSE SUCCESSFUL
-db.once("open", function() {
+db.once("open", function () {
     console.log("Mongoose connection successful.");
     // Listen on PORT
-    app.listen(PORT, function() {
-        console.log("App running on port 3000!");
+    app.listen(process.env.PORT || PORT, function () {
+        console.log("App running on port " + PORT + "!");
     });
-});
 
-//ROUTES IN CONTROLLERS FOLER
-var routes = require("./controllers/controller.js");
-app.use("/", routes);
+    //ROUTES IN CONTROLLERS FOLDER
+    var routes = require("./controllers/controller.js");
+    // app.use("/", routes);

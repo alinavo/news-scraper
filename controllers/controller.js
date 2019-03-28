@@ -6,8 +6,8 @@ var express = require("express");
 var router = express.Router();
 
 // IMPORT NOTES.JS AND ARTICLES.JS
-var Notes = require("../models/Notes.js");
-var Articles = require("../models/Articles.js");
+var Notes = require("../models/notes.js");
+var Articles = require("../models/articles.js");
 
 //GET REQUEST
 router.get("/", function(req, res) {
