@@ -11,7 +11,7 @@
 </nav>
 
 <main>
-    {{!-- parallax with coffee backdrop --}}
+    {{!-- PARALLAX CONTAINER SCROLLING EFFECT --}}
     <div class="parallax-container">
       <div class="parallax"><img src="../images/coffee.jpg"></div>
         <br>
@@ -43,7 +43,7 @@
                <div class="card-image">
                  <a class="articleLink" href={{this.link}} target="blank"><img src="{{this.imgLink}}"></a>
                </div>
-               {{!-- collapsible content (title with teaser, add note, read notes and delete article) --}}
+               {{!-- TITLE, ADD NOTE, READ NOTE, DELETE ARTICLE --}}
                <div class="card-content" style="padding: 0;">
                  <ul class="collapsible" data-collapsible="accordion">
                     <!-- DROP DOWN MENU WITH ARTICLES -->
@@ -93,15 +93,15 @@
                     <li>
                       <div class="collapsible-header" id="note">View Notes</div>
                         <div class="collapsible-body" style="background-color: white;">                        
-                          {{!-- This checks to see if articles has notes --}}
+                          {{!-- ARTICLE WITH NOTE --}}
                           {{#if this.note}}
-                            {{!-- Article has notes iterate over them  --}}
+                            {{!-- ITERATES OVER NOTES  --}}
                             <ul class="collection">
                               {{#each this.note}}                              
                                 <li class="collection-item">
-                                  {{!-- Add the title of the note --}}
+                                  {{!-- NOTE TITLE --}}
                                   <h5>{{this.title}}</h5>
-                                  {{!-- Add the Content of the Note --}}
+                                  {{!-- NOTE CONTENT --}}
                                   <p>{{this.body}}</p>                
                                   {{!-- DELETE BUTTON --}}
                                   <span class="badge">
@@ -113,7 +113,7 @@
                                 </li> 
                               {{/each}}
                             </ul>                         
-                          {{!-- No notes? Displays message--}}
+                          {{!-- NO CURRENT NOTES AVAILABLE--}}
                           {{else}}
                             <p>There are no current notes for this article</p>
                           {{/if}}                          
@@ -134,6 +134,6 @@
 
 <footer class="page-footer black">
     <div class="copyright black-text center">
-        All content featured on this app belongs to NPR News. Visit <a class="link grey-text" href="www.npr.org/sections/news">NPR.org</a> to read more about the articles featured. 
+        All content featured on this app and copyright belongs to NPR News. 
     </div>
 </footer>
