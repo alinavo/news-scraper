@@ -54,5 +54,5 @@ db.once("open", function () {
     });
 
     //ROUTES IN CONTROLLERS FOLDER
-    var routes = require("./controllers/controller.js");
-    // app.use("/", routes);
+    var routes = require("./controllers/controller.js");  
+    app.use("/", routes);
