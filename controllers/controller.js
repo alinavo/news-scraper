@@ -7,7 +7,7 @@ var router = express.Router();
 
 
 // db
-var db = require("../models");
+var db = require("./models");
 
 
 // IMPORT NOTES.JS AND ARTICLES.JS
