@@ -9,6 +9,17 @@
 NPR New-Scraper can be found [here](https://alinav-news-scraper.herokuapp.com/) hosted by [Heroku](https://www.heroku.com/)
 
 
+[Video Demo](https://drive.google.com/file/d/1eUVd-Z98Ewtn0yky2TDU3C10o_DpRUGa/view?usp=sharing) hosted by Screencastify. 
+
+
+## Screenshots
+
+### Home
+![Home](homescreen.png)
+
+### Saved articles
+![Saved](saved.png)
+
 
 ## Setup
 ```
