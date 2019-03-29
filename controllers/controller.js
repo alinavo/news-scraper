@@ -9,6 +9,9 @@ var router = express.Router();
 var Notes = require("../models/notes.js");
 var Articles = require("../models/articles.js");
 
+// db
+var db = require("../models");
+
 //GET REQUEST
 router.get("/", function(req, res) {
     res.render("index");
@@ -34,13 +37,23 @@ router.get("/scrape", function(req, res) {
             result.teaser = $(this).children(".item-info").find("p.teaser").text();
             result.imgLink = $(this).children(".item-image").find("a").find("img").attr("src");
             //PUSH OBJECT INTO ARRAY HERE
-            if (result.title && result.link && result.teaser && result.imgLink) {
-                articles.push(result);
-            }
-        });
+            // if (result.title && result.link && result.teaser && result.imgLink) {
+            //     articles.push(result);
+            
+            // }
+            articles.push(result);
+
+            console.log("this is the information" + articles);
+        }); 
+        db.Articles.create(function(articles)
+        
+        .then(function(hbsObject){
+            
+            res.render("index", hbsObject);
+        }))
         var hbsObject = { article: articles, num: num };
+        console.log( "this is a random variable...maybe" + hbsObject)
         //REDIRECTS INTO ARTICLE PAGE
-        res.render("index", hbsObject);
     });
 
 });

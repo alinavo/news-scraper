@@ -29,7 +29,7 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
 var MONGODB = process.env.MONGODB_URI || "mongodb://localhost/NPRarticles";
-mongoose.connect(MONGODB);
+mongoose.connect(MONGODB, {useNewUrlParser : true});
 var db = mongoose.connection;
 
 db.on("error", function(error) {
